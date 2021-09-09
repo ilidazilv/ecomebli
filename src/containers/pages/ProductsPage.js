@@ -1,7 +1,8 @@
 import {Container, Row} from "reactstrap";
 import {Product} from "../../components/Product";
 import {useProducts} from "../../hooks/useProducts";
-import {productsImages} from "../../constants/productsImages";
+import {LoadingComponent} from "../../components/LoadingComponent";
+import {NotFoundData} from "../../components/NotFoundData";
 
 export const ProductsPage = () => {
     const {products, loading, error} = useProducts();
@@ -17,13 +18,16 @@ export const ProductsPage = () => {
                             currency={item.currency}
                             name={item.name}
                             price={item.price}
-                            img={productsImages
-                                    .find((item) =>
-                                        item.id === parseInt(item.id, 10)
-                                    ).img}
+                            img={item.img}
                         />
                     )
                 })}
+                {
+                    loading && <LoadingComponent/>
+                }
+                {
+                    !loading && error && <NotFoundData/>
+                }
             </Row>
         </Container>
     )

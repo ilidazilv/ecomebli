@@ -1,6 +1,10 @@
 .product-wrapper{
   font-family: "FoglihtenNo06", sans-serif;
 }
+.product-wrapper img{
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
 .product-wrapper li{
   font-size: 25px;
   list-style: none;

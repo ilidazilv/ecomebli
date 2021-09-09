@@ -1,12 +1,23 @@
 <?php
 
+use DevCoder\DotEnv;
+
+require '../DevCoder.php';
+
+(new DotEnv(false))->load();
 
 class Database
 {
-    protected $servername = "127.0.0.1";
-    protected $username = "root";
+    protected $servername = "";
+    protected $username = "";
     protected $password = "";
-    protected $db = "ecomebli";
+    protected $db = "";
+    public function __construct(){
+        $this->servername = getenv('DATABASE_HOST');
+        $this->username = getenv('DATABASE_USER');
+        $this->password = getenv('DATABASE_PASSWORD');
+        $this->db = getenv('DATABASE_NAME');
+    }
     public function doRequestWithNoAnswer($sql, $useDB) {
         try{
             $dsn = "mysql:host=$this->servername;" . (($useDB) ? "dbname=$this->db" : '');

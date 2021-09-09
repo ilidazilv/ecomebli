@@ -23,13 +23,28 @@ export const useProducts = () => {
                     throw new Error(error.message);
                 })
             .then(response => response.json())
-            .then(response => dispatch(actions.saveProducts(response.map(item => ({
-                    name: item.name,
-                    price: item.price ? parseInt(item.price, 10) : undefined,
-                    types: item.types,
-                    currency: item.currency,
-                    id: parseInt(item.product_id, 10),
-            })))))
+            .then(response => {
+                const products = response.filter((value, index, self) => {
+                    return self.findIndex(
+                        item =>
+                            parseInt(item.product_id, 10) === parseInt(value.product_id, 10)) === index;
+                }).map((item) => {
+                    return({
+                        name: item.product_name,
+                        id: parseInt(item.product_id, 10),
+                        types: [],
+                        img: item.image_src,
+                    })
+                })
+                response.forEach((item) => {
+                    products.find(product => product.id === parseInt(item.product_id, 10)).types.push({
+                        name: item.type_name,
+                        price: item.price,
+                        currency: item.currency,
+                    })
+                })
+                dispatch(actions.saveProducts(products));
+            })
             .catch(e => dispatch(actions.failedProducts(new Error(e).message)))
     }
     return {

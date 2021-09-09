@@ -15,7 +15,7 @@ export const Header = () => {
     const [isOpen, setOpen] = React.useState(false);
     let refs = {
         refAbout: document.querySelector('#about'),
-        refSummary: document.querySelector('#summary'),
+        refSummary: document.querySelector('#contacts'),
         refPortfolio: document.querySelector('#portfolio'),
     }
 
@@ -28,7 +28,7 @@ export const Header = () => {
     React.useEffect(() => {
         refs = {
             refAbout: document.querySelector('#about'),
-            refSummary: document.querySelector('#summary'),
+            refSummary: document.querySelector('#contacts'),
             refPortfolio: document.querySelector('#portfolio'),
         }
         if(findEl){

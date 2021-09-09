@@ -43,6 +43,20 @@
   line-height: 1.1;
   color: rgba(64,62,58,0.6);
   outline: none;
+  @media screen and (max-width: 1199px){
+    padding-left: 50%;
+  }
+}
+.form-wrapper form>div input.tel-input-home {
+  box-sizing: border-box;
+  border: 2px solid rgba(64,62,58,0.1);
+  width: 100%;
+  max-width: 500px;
+  padding-left: 300px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: rgba(64,62,58,0.6);
+  outline: none;
   @media screen and (max-width: 650px){
     padding-left: 50%;
   }
@@ -68,6 +82,19 @@
   outline: none;
 }
 .form-wrapper form>div input.name-input {
+  box-sizing: border-box;
+  border: 2px solid rgba(64,62,58,0.1);
+  width: 100%;
+  max-width: 500px;
+  padding-left: 300px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: rgba(64,62,58,0.6);
+  @media screen and (max-width: 1199px){
+    padding-left: 50%;
+  }
+}
+.form-wrapper form>div input.name-input-home {
   box-sizing: border-box;
   border: 2px solid rgba(64,62,58,0.1);
   width: 100%;

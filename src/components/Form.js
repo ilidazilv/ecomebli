@@ -3,7 +3,7 @@ import React from 'react';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import "../styles/form.scss";
 
-export const Form = ({setStatus, product}) => {
+export const Form = ({setStatus, product, isHome}) => {
     const onSubmit = ({tel, fullName}) => {
         const requestOptions = {
             method: 'POST',
@@ -44,11 +44,11 @@ export const Form = ({setStatus, product}) => {
                     <div>
                         <div className="input-wrapper">
                             <Field id="fullName" type="text" placeholder="Ім'я Прізвище" name="fullName"
-                                   className="name-input" required={true}/>
+                                   className={isHome ? 'name-input-home' : 'name-input'} required={true}/>
                         </div>
                         <div className="input-wrapper">
                             <Field id="tel" type="tel" placeholder="+(380) ___ ___ ___"
-                                   className="tel-input" name="tel" required={true}/>
+                                   className={isHome ? 'tel-input-home' : 'tel-input'} name="tel" required={true}/>
                         </div>
                     </div>
                     <div>

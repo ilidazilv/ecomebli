@@ -25,7 +25,7 @@ export const Gallery = () => {
         }
     }, [status]);
     return(
-        <Container id='portfolio' className='gallery-wrapper' fluid>
+        <Container className='gallery-wrapper' fluid>
             <Row>
                 <Col className='p-0'>
                     <img src={background} className='w-100' alt='ecomebli'/>
@@ -34,7 +34,7 @@ export const Gallery = () => {
             <Row>
                 <Col className='p-0 gallery-img-wrapper position-relative'>
                     <div className='gallery-item gallery-001 position-absolute'>
-                        <img src={img001} className='w-100' alt='ecomebli'/>
+                        <img id='portfolio' src={img001} className='w-100' alt='ecomebli'/>
                         <span>0001</span>
                         <span>Дерево</span>
                     </div>
@@ -110,7 +110,7 @@ export const Gallery = () => {
                 </Col>
             </Row>
             <Row>
-                <Col className='d-flex flex-column align-items-start form-wrapper form-padding'>
+                <Col id='contacts' className='d-flex flex-column align-items-start form-wrapper form-padding'>
                     <div className='w-100 pb-4vw'>
                         <h1 className='w-100 m-0'>
                             Маєте запитання?
@@ -119,7 +119,7 @@ export const Gallery = () => {
                             Залиште ваші контакти, та очікуйте на дзвінок
                         </h3>
                     </div>
-                    <Form setStatus={setStatus}/>
+                    <Form setStatus={setStatus} isHome/>
                 </Col>
                 {isOpen ? <AlertWrapper setOpen={setOpen} isOpen={isOpen} status={status}/> : <div/>}
             </Row>
