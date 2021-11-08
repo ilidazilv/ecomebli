@@ -38,7 +38,7 @@ export const Header = () => {
 
     return(
         <Navbar expand="md" cssModule={{'navbar': 'header wrapper'}}>
-            <NavbarBrand cssModule={{'navbar-brand': 'navbar-brand-button'}} href='/' className='w-25'>
+            <NavbarBrand cssModule={{'navbar-brand': 'navbar-brand-button'}} href='/'>
                 <div className='header-logo'>
                     <img className='h-100 mr-2' src={logoIcon} alt='ecomebli'/>
                     <span>ecomebli</span>

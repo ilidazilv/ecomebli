@@ -11,7 +11,7 @@ import img008 from "../assets/images/gallery-008.png";
 import img009 from "../assets/images/gallery-009.png";
 import img010 from "../assets/images/gallery-010.png";
 import arrowDown from "../assets/images/arrow-down.png";
-import {Form} from "../components/Form";
+import {ContactForm} from "../components/ContactForm";
 import {AlertWrapper} from "../components/AlertWrapper";
 import React from 'react';
 
@@ -119,7 +119,7 @@ export const Gallery = () => {
                             Залиште ваші контакти, та очікуйте на дзвінок
                         </h3>
                     </div>
-                    <Form setStatus={setStatus} isHome/>
+                    <ContactForm setStatus={setStatus} isHome/>
                 </Col>
                 {isOpen ? <AlertWrapper setOpen={setOpen} isOpen={isOpen} status={status}/> : <div/>}
             </Row>

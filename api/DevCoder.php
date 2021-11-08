@@ -14,10 +14,10 @@ class DotEnv
 
     public function __construct(string $path)
     {
-        if(!file_exists($path ? $path : (__DIR__ . '/../../.env'))) {
+        if(!file_exists($path ? $path : (__DIR__ . '/../.env'))) {
             throw new \InvalidArgumentException(sprintf('%s does not exist', $path));
         }
-        $this->path = $path ? $path :  (__DIR__ . '/../../.env');
+        $this->path = $path ? $path :  (__DIR__ . '/../.env');
     }
 
     public function load() :void

@@ -2,9 +2,14 @@ import {baseUrl} from "../constants/baseUrl";
 import React from 'react';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import "../styles/form.scss";
+import {useOrders} from "../hooks/useOrders";
 
-export const Form = ({setStatus, product, isHome}) => {
+export const ContactForm = ({setStatus, product_id, product, isHome}) => {
+    const {saveOrder} = useOrders();
     const onSubmit = ({tel, fullName}) => {
+        if(!isHome){
+            saveOrder({tel: tel, name: fullName, product: product_id});
+        }
         const requestOptions = {
             method: 'POST',
             body: JSON.stringify({
@@ -17,6 +22,7 @@ export const Form = ({setStatus, product, isHome}) => {
                 'Content-Type': 'application/json',
             }
         }
+        /*
         fetch(baseUrl + '/api/mailer.php', requestOptions)
             .then(response => {
                     if(response.ok){
@@ -36,6 +42,7 @@ export const Form = ({setStatus, product, isHome}) => {
                 setStatus({ok: false, error: e});
                 console.log(e);
             });
+         */
     }
     const initialValues = {tel: '', fullName: ''}
     return(

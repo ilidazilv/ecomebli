@@ -12,6 +12,6 @@ $products = $database->doRequest('
                                                types.price,
                                                types.currency,
                                                products.image_src
-                                        FROM products JOIN types using(product_id)', true);
+                                        FROM products JOIN types using(product_id)', true, true);
 
 echo json_encode($products);

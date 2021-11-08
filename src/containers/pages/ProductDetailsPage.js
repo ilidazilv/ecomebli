@@ -5,7 +5,7 @@ import {LoadingComponent} from "../../components/LoadingComponent";
 import {NotFoundData} from "../../components/NotFoundData";
 import "../../styles/product.scss";
 import React from 'react';
-import {Form} from "../../components/Form";
+import {ContactForm} from "../../components/ContactForm";
 import {AlertWrapper} from "../../components/AlertWrapper";
 
 export const ProductDetailsPage = () => {
@@ -61,7 +61,7 @@ export const ProductDetailsPage = () => {
                                             })
                                         }
                                     </ul>
-                                    <Form setStatus={setStatus} product={product.name + ' ' + product.types[radio].name}/>
+                                    <ContactForm setStatus={setStatus} product_id={id} product={product.name + ' ' + product.types[radio].name}/>
                                     {isOpen ? <AlertWrapper setOpen={setOpen} isOpen={isOpen} status={status}/> : <div/>}
                                 </div>
                             </Col>

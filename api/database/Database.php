@@ -11,7 +11,7 @@ class Database
     protected $servername = "";
     protected $username = "";
     protected $password = "";
-    protected $db = "";
+    public $db = "";
     public function __construct(){
         $this->servername = getenv('DATABASE_HOST');
         $this->username = getenv('DATABASE_USER');
@@ -20,7 +20,7 @@ class Database
     }
     public function doRequestWithNoAnswer($sql, $useDB) {
         try{
-            $dsn = "mysql:host=$this->servername;" . (($useDB) ? "dbname=$this->db" : '');
+            $dsn = "mysql:host=$this->servername;" . (($useDB) ? "dbname=$this->db" : '' . ';charset=utf8');
             $connection = new PDO($dsn, $this->username, $this->password);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -31,12 +31,32 @@ class Database
             echo $sql . "<br>" . $e->getMessage() . "<br/>";
         }
     }
-    public function doRequest($sql, $useDB) {
-        $dsn = "mysql:host=$this->servername;" . (($useDB) ? "dbname=$this->db" : '');
+    public function doRequest($sql, $useDB, $fetchAll) {
+        $dsn = "mysql:host=$this->servername;" . (($useDB) ? "dbname=$this->db" : '') . ";charset=utf8";
         $connection = new PDO($dsn, $this->username, $this->password);
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $connection->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll();
+        if($fetchAll){
+            return $stmt->fetchAll();
+        } else {
+            return $stmt->fetch();
+        }
+    }
+    public function doRequestWithVar($sql, $variables, $insert) {
+        try{
+            $dsn = "mysql:host=$this->servername;" . "dbname=$this->db" . ";charset=utf8";
+            $connection = new PDO($dsn, $this->username, $this->password);
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $connection->prepare($sql);
+            $stmt->execute($variables);
+            if($insert){
+                return true;
+            } else {
+                return $stmt->fetchAll();
+            }
+        } catch (PDOException $e){
+            return $e->getMessage();
+        }
     }
 }
