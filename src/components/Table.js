@@ -13,8 +13,17 @@ export const StyledTable = ({head, rows}) => {
                 </tr>
                 </thead>
                 <tbody>
+                {
+                    rows && rows.map(item => {
+                        return (
+                            <tr>
+                                {Object.keys(head).map((name, key) => <th key={key}>{item[head[name].data] || '-'}</th>)}
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
             </Table>
         </>
     )
-}
+};

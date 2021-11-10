@@ -13,7 +13,7 @@ switch ($obj['type']){
                                         SELECT 
                                                password,
                                                name
-                                        FROM users WHERE name = :user;', [':user' => $obj['name']], false);
+                                        FROM users WHERE name = :user;', [':user' => $obj['name']], false, false);
         if($answer[0] && $answer[0]['password'] && password_verify($obj['password'],$answer[0]['password'])){
             echo json_encode(['status' => true, 'cookie' => password_hash($answer[0]['name'], PASSWORD_BCRYPT)]);
         } else {
@@ -25,7 +25,7 @@ switch ($obj['type']){
         $password = password_hash($obj['password'], PASSWORD_BCRYPT);
         $answer = $database->doRequestWithVar('
                                         INSERT INTO users(name, password) VALUES (:user, :pass);',
-            [':user' => $obj['name'], ':pass' => $password], true);
+            [':user' => $obj['name'], ':pass' => $password], true, false);
         echo json_encode(['status' => $answer ? 'success' : 'error']);
         break;
     }
