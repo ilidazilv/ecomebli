@@ -1,5 +1,5 @@
 
-.form-wrapper{
+.form-wrapper, .form-wrapper-admin{
   font-family: "Mazzard M Medium", sans-serif;
   font-size: 18px;
   @media screen and (min-width: 992px){
@@ -113,6 +113,29 @@
   height: 50px;
   width: 100%;
   max-width: 350px;
+  padding-left: 25px;
+  line-height: 1.1;
+  text-align: left;
+  background: url("../assets/images/submit-image.png") no-repeat 88% center,linear-gradient(to right, #fad1ac, #fad1ac);
+  background-size: 30px;
+  border: none;
+}
+
+.form-wrapper-admin form input {
+  box-sizing: border-box;
+  border: 2px solid rgba(64,62,58,0.1);
+  max-width: 200px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: rgba(64,62,58,0.6);
+}
+
+.form-wrapper-admin form button.submit-input {
+  cursor: pointer;
+  border-radius: 1.25rem;
+  height: 50px;
+  width: 100%;
+  max-width: 150px;
   padding-left: 25px;
   line-height: 1.1;
   text-align: left;

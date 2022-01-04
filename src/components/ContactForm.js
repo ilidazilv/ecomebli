@@ -1,4 +1,3 @@
-import {baseUrl} from "../constants/baseUrl";
 import React from 'react';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import "../styles/form.scss";
@@ -8,41 +7,8 @@ export const ContactForm = ({setStatus, product_id, product, isHome}) => {
     const {saveOrder} = useOrders();
     const onSubmit = ({tel, fullName}) => {
         if(!isHome){
-            saveOrder({tel: tel, name: fullName, product: product_id});
+            saveOrder({tel: tel, name: fullName, product_id: product_id, product: product}, setStatus);
         }
-        const requestOptions = {
-            method: 'POST',
-            body: JSON.stringify({
-                "tel": tel,
-                "fullName": fullName,
-                ...(product ? {"product": product} : {})
-            }),
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            }
-        }
-        /*
-        fetch(baseUrl + '/api/mailer.php', requestOptions)
-            .then(response => {
-                    if(response.ok){
-                        return response;
-                    } else {
-                        let error = new Error('Error ' + response.status + ': ' + response.statusText);
-                        error.response = response;
-                        throw error;
-                    }
-                },
-                error => {
-                    throw new Error(error.message);
-                })
-            .then(response => response.json())
-            .then(data => setStatus({ok: data.status, error: data.status ? undefined : 'Some error'}))
-            .catch(e => {
-                setStatus({ok: false, error: e});
-                console.log(e);
-            });
-         */
     }
     const initialValues = {tel: '', fullName: ''}
     return(

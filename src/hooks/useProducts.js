@@ -34,6 +34,9 @@ export const useProducts = () => {
                         id: parseInt(item.product_id, 10),
                         types: [],
                         img: item.image_src,
+                        locale_unit: item.locale_unit,
+                        locale_quantity: item.locale_quantity,
+                        calculation_type: parseInt(item.calculation_type, 10),
                     })
                 })
                 response.forEach((item) => {

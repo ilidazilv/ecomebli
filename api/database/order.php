@@ -40,6 +40,7 @@ switch ($obj['type']){
                 JOIN order_items using(order_id) 
                 JOIN customers using(customer_id) 
                 JOIN products using(product_id)
+            ORDER BY orders.date DESC
                 ', true, true);
         echo json_encode(['status' => 'success', 'data' => $orders]);
         break;

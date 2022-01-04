@@ -2,8 +2,11 @@ import {baseUrl} from "../constants/baseUrl";
 import React from 'react';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import "../styles/form.scss";
+import {AlertWrapper} from "./AlertWrapper";
 
 export const LoginForm = ({setCookies}) => {
+    const [alert, setAlert] = React.useState();
+    console.log(alert)
     const onSubmit = ({login, password}) => {
         const requestOptions = {
             method: 'POST',
@@ -34,27 +37,31 @@ export const LoginForm = ({setCookies}) => {
             .then(data => data.status ? setCookies("login", data.cookie) : setCookies(undefined))
             .catch(e => {
                 setCookies(undefined);
+                setAlert('danger')
                 console.log(e);
             });
     }
     const initialValues = {login: '', password: ''}
     return(
-        <Formik initialValues={initialValues} onSubmit={onSubmit}>
-            <FormikForm id="formEmail" className='w-100'>
-                <div>
+        <>
+            <Formik initialValues={initialValues} onSubmit={onSubmit}>
+                <FormikForm id="formEmail" className='w-100 d-flex flex-column justify-content-center align-items-center'>
                     <div className="input-wrapper">
                         <Field id="login" type="text" placeholder="Логін" name="login"
-                               className='name-input' required={true}/>
+                               className='name-input p-2' required={true}/>
                     </div>
                     <div className="input-wrapper">
                         <Field id="password" type="password" placeholder="Пароль"
-                               className='name-input' name="password" required={true}/>
+                               className='password-input p-2' name="password" required={true}/>
                     </div>
-                </div>
-                <div>
                     <button type="submit" className="submit-input">Увійти</button>
-                </div>
-            </FormikForm>
-        </Formik>
+                </FormikForm>
+            </Formik>
+            <AlertWrapper
+                status={alert === 'success'}
+                setOpen={setAlert}
+                isOpen={!!alert}
+            />
+        </>
     )
 }

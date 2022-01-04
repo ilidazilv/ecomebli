@@ -1,1 +1,1 @@
-export const baseUrl = 'https://test.teymax.com';
+export const baseUrl = 'https://ecomebli.com.ua/';

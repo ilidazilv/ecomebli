@@ -70,7 +70,7 @@ export const ProductDetailsPage = () => {
                       );
                     })}
                 </ul>
-                <Calculator product={product} />
+                <Calculator product={product} material={parseInt(product.types[radio].price, 10)} />
                 <ContactForm
                   setStatus={setStatus}
                   product_id={id}

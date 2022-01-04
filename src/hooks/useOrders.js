@@ -33,14 +33,28 @@ export const useOrders = () => {
             })
             .catch(e => dispatch(actions.failedOrders(new Error(e).message)))
     }
-    const saveOrder = (data) => {
+    const saveOrder = (data, setStatus) => {
         dispatch(actions.loadingOrders());
+        fetch(baseUrl + '/api/mailer.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                "tel": data.tel,
+                "fullName": data.name,
+                "product": data.product,
+            })
+        })
+            .then(data => setStatus({ok: data.status, error: data.status ? undefined : 'Some error'}))
+            .catch(e => {
+                setStatus({ok: false, error: e});
+                console.log(e);
+                dispatch(actions.failedOrders(new Error(e).message))
+            })
         fetch(baseUrl + '/api/database/order.php', {
             method: 'POST',
             body: JSON.stringify({
                 "tel": data.tel,
                 "name": data.name,
-                "product": data.product,
+                "product": data.product_id,
                 "type": "save",
             }),
             headers: {
@@ -60,11 +74,16 @@ export const useOrders = () => {
                 error => {
                     throw new Error(error.message);
                 })
+            .then(data => setStatus({ok: data.status, error: data.status ? undefined : 'Some error'}))
             .then(response => response.json())
             .then(response => {
                 dispatch(actions.saveOrder(response));
             })
-            .catch(e => dispatch(actions.failedOrders(new Error(e).message)))
+            .catch(e => {
+                setStatus({ok: false, error: e});
+                console.log(e);
+                dispatch(actions.failedOrders(new Error(e).message))
+            })
     }
     return {
         fetchOrders,

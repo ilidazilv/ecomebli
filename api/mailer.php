@@ -61,6 +61,7 @@ try {
     $mail->setFrom(getenv('EMAIL_ADDRESS'));
     $mail->FromName = "EcoMebli";
     $mail->addAddress(getenv('EMAIL_TO'));     //Add a recipient
+    $mail->addAddress(getenv('EMAIL_TO2'));
 
 
     //Attachments

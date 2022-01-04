@@ -11,6 +11,9 @@ $database->doRequestWithNoAnswer('
                                             product_id int NOT NULL AUTO_INCREMENT,
                                             name varchar(255) NOT NULL,
                                             image_src varchar(255) NOT NULL,
+                                            locale_quantity varchar(255) DEFAULT \'Кількість\',
+                                            locale_unit varchar(255) DEFAULT \'шт.\',
+                                            calculation_type integer DEFAULT 0,
                                             PRIMARY KEY (product_id)
                                         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
                                         ', true);

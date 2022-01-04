@@ -6,7 +6,7 @@ import {AdminPanel} from "../AdminPanel";
 export const AdminPage = () => {
     const [cookies, setCookies] = useCookies(['login']);
     return(
-        <div>
+        <div className='form-wrapper-admin'>
             {
                 !cookies.login && <LoginForm setCookies={setCookies}/>
             }

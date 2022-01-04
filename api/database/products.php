@@ -8,6 +8,9 @@ $products = $database->doRequest('
                                         SELECT 
                                                products.name as product_name,
                                                products.product_id,
+                                               products.locale_unit,
+                                               products.locale_quantity,
+                                               products.calculation_type,
                                                types.name as type_name,
                                                types.price,
                                                types.currency,

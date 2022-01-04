@@ -2,35 +2,60 @@ import React, { useState } from 'react';
 import '../styles/calculator.scss';
 import { InputGroup, InputGroupText, Input } from 'reactstrap';
 
-export const Calculator = ({ product }) => {
-  const { name, types } = product;
+export const Calculator = ({ product, material }) => {
+  const { locale_quantity, locale_unit, calculation_type } = product;
   const [count, setCount] = useState(0);
-  const [material, setMaterial] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [totalSum, setTotalSum] = useState(0);
 
-  const units = () => {
-    switch (name) {
-      case 'Двері':
-        return 'шт.';
-      case 'Сходи':
-        return 'кв.м.';
-      case 'Кухні':
-        return 'пог.м.';
-      default:
-        return 'шт.';
-    }
-  };
+  React.useEffect(() => {
+    setCount(height * width);
+  }, [height, width])
 
-  const handleCalculateTotalSum = () => {
-    return count * material;
-  };
+  React.useEffect(() => {
+    setTotalSum(material * count);
+  }, [count, material])
 
   return (
     <>
       <div className="calculator-wrapper">
         <p className="calculator-header">Калькулятор вартості товару</p>
 
+        {
+          calculation_type === 1 && (
+              <>
+                <InputGroup className="input-group">
+                  <InputGroupText>Ширина</InputGroupText>
+                  <Input
+                      type="number"
+                      min="0"
+                      value={width}
+                      onChange={(event) => {
+                        setWidth(event.target.value);
+                      }}
+                  />
+                  <InputGroupText>м.</InputGroupText>
+                </InputGroup>
+
+                <InputGroup className="input-group">
+                  <InputGroupText>Висота</InputGroupText>
+                  <Input
+                      type="number"
+                      min="0"
+                      value={height}
+                      onChange={(event) => {
+                        setHeight(event.target.value);
+                      }}
+                  />
+                  <InputGroupText>м.</InputGroupText>
+                </InputGroup>
+              </>
+          )
+        }
+
         <InputGroup className="input-group">
-          <InputGroupText>Кількість</InputGroupText>
+          <InputGroupText>{locale_quantity}</InputGroupText>
           <Input
             type="number"
             min="0"
@@ -39,10 +64,10 @@ export const Calculator = ({ product }) => {
               setCount(event.target.value);
             }}
           />
-          <InputGroupText>{units()}</InputGroupText>
+          <InputGroupText>{locale_unit}</InputGroupText>
         </InputGroup>
 
-        <InputGroup className="input-group">
+{/*        <InputGroup className="input-group">
           <InputGroupText>Матеріал</InputGroupText>
 
           <select
@@ -63,13 +88,13 @@ export const Calculator = ({ product }) => {
               );
             })}
           </select>
-        </InputGroup>
+        </InputGroup>*/}
 
         <InputGroup>
           <InputGroupText className="input-total-sum">
             Загальна вартість:
           </InputGroupText>
-          <InputGroupText className="form-control">{`${handleCalculateTotalSum()}грн`}</InputGroupText>
+          <InputGroupText className="form-control">{`${totalSum}грн`}</InputGroupText>
         </InputGroup>
 
         {/* БЫЛО СНАЧАЛО ХАРДКОРДОМ!!! */}
