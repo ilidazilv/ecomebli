@@ -9,6 +9,7 @@ export const ContactForm = ({setStatus, product_id, product, isHome}) => {
         if(!isHome){
             saveOrder({tel: tel, name: fullName, product_id: product_id, product: product}, setStatus);
         }
+        saveOrder({ tel: tel, name: fullName }, setStatus);
     }
     const initialValues = {tel: '', fullName: ''}
     return(
