@@ -14,6 +14,7 @@ $database->doRequestWithNoAnswer('
                                             locale_quantity varchar(255) DEFAULT \'Кількість\',
                                             locale_unit varchar(255) DEFAULT \'шт.\',
                                             calculation_type integer DEFAULT 0,
+                                            locale_calculation_unit varchar(255),
                                             PRIMARY KEY (product_id)
                                         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
                                         ', true);

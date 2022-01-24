@@ -36,6 +36,8 @@ export const useProducts = () => {
                         img: item.image_src,
                         locale_unit: item.locale_unit,
                         locale_quantity: item.locale_quantity,
+                        locale_calculation_unit: item.locale_calculation_unit,
+                        proportion: item.proportion,
                         calculation_type: parseInt(item.calculation_type, 10),
                     })
                 })

@@ -11,6 +11,8 @@ $products = $database->doRequest('
                                                products.locale_unit,
                                                products.locale_quantity,
                                                products.calculation_type,
+                                               products.locale_calculation_unit,
+                                               products.proportion,
                                                types.name as type_name,
                                                types.price,
                                                types.currency,
