@@ -2,14 +2,17 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: #403E3A;
+  color: #858379;
   &:hover, &:active {
     transform: scale(1.1);
     transition: .3s transform;
-    color: #858379;
+    color: #403E3A;
   }
 }
 .products-item-link img{
   aspect-ratio: 3 / 4.5;
   object-fit: cover;
+}
+.products-item-link-another img {
+  filter: blur(4px)
 }

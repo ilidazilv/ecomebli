@@ -14,7 +14,6 @@ export const Calculator = ({ product, material }) => {
   }, [height, width])
 
   React.useEffect(() => {
-    console.log(proportion)
     setTotalSum(Math.round(((material * count) / proportion) * 100) / 100);
   }, [count, material])
 
@@ -27,7 +26,7 @@ export const Calculator = ({ product, material }) => {
           calculation_type === 1 && (
               <>
                 <InputGroup className="input-group">
-                  <InputGroupText>Ширина</InputGroupText>
+                  <InputGroupText>Ширина маршу</InputGroupText>
                   <Input
                       type="number"
                       min="0"
@@ -40,7 +39,7 @@ export const Calculator = ({ product, material }) => {
                 </InputGroup>
 
                 <InputGroup className="input-group">
-                  <InputGroupText>Висота</InputGroupText>
+                  <InputGroupText>Довжина маршу</InputGroupText>
                   <Input
                       type="number"
                       min="0"
