@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'reactstrap';
 import { LoadingComponent } from '../../components/LoadingComponent';
 import { NotFoundData } from '../../components/NotFoundData';
 import '../../styles/product.scss';
-import React from 'react';
+import React, {useState} from 'react';
 import { ContactForm } from '../../components/ContactForm';
 import { AlertWrapper } from '../../components/AlertWrapper';
 import { Calculator } from '../../components/Calculator';
@@ -13,6 +13,7 @@ export const ProductDetailsPage = () => {
   const [isOpen, setOpen] = React.useState(false);
   const { id } = useParams();
   const { loading, products, error } = useProducts();
+  const [totalSum, setTotalSum] = useState(0);
   const product =
     !loading &&
     !error &&
@@ -20,6 +21,10 @@ export const ProductDetailsPage = () => {
     products.find((item) => item.id === parseInt(id, 10));
   const [radio, setRadio] = React.useState(0);
   const [status, setStatus] = React.useState({ ok: false, error: undefined });
+  const [count, setCount] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+
   React.useEffect(() => {
     if (status.ok || status.error) {
       setOpen(true);
@@ -70,11 +75,29 @@ export const ProductDetailsPage = () => {
                       );
                     })}
                 </ul>
-                <Calculator product={product} material={parseInt(product.types[radio].price, 10)} />
+                <Calculator
+                    product={product}
+                    material={parseInt(product.types[radio].price, 10)}
+                    totalSum={totalSum}
+                    setTotalSum={setTotalSum}
+                    setCount={setCount}
+                    height={height}
+                    width={width}
+                    count={count}
+                    setWidth={setWidth}
+                    setHeight={setHeight}
+                />
                 <ContactForm
                   setStatus={setStatus}
                   product_id={id}
                   product={product.name + ' ' + product.types[radio].name}
+                  price={totalSum}
+                  calc1Locale={'Довжина маршу'}
+                  calc2Locale={'Ширина маршу'}
+                  calc3Locale={product.locale_quantity}
+                  calc1={`${height} ${product.locale_calculation_unit}`}
+                  calc2={`${width} ${product.locale_calculation_unit}`}
+                  calc3={`${count} ${product.locale_unit}`}
                 />
                 {isOpen ? (
                   <AlertWrapper

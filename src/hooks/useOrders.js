@@ -41,6 +41,12 @@ export const useOrders = () => {
                 "tel": data.tel,
                 "fullName": data.name,
                 "product": data.product,
+                calc1Locale: data.calc1Locale,
+                calc1: data.calc1,
+                calc2Locale: data.calc2Locale,
+                calc2: data.calc2,
+                calc3Locale: data.calc3Locale,
+                calc3: data.calc3,
             })
         })
             .then(data => setStatus({ok: data.status, error: data.status ? undefined : 'Some error'}))

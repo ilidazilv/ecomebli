@@ -41,6 +41,26 @@ if(!$obj['tel'] || !$obj['fullName']){
         <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>Продукт</b></td>
         <td style='padding: 10px; border: #e9e9e9 1px solid;'>". $obj['product'] ."</td>
       </tr>
+      
+      <tr>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>". $obj['calc1Locale'] . "</b></td>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'>". $obj['calc1'] ."</td>
+      </tr>
+      
+      <tr>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>". $obj['calc2Locale'] . "</b></td>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'>". $obj['calc2'] ."</td>
+      </tr>
+      
+      <tr>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>". $obj['calc3Locale'] . "</b></td>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'>". $obj['calc3'] ."</td>
+      </tr>
+      
+      <tr>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>Ціна</b></td>
+        <td style='padding: 10px; border: #e9e9e9 1px solid;'>". $obj['price'] ."</td>
+      </tr>
       </table>";
 }
 

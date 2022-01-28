@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import '../styles/calculator.scss';
 import { InputGroup, InputGroupText, Input } from 'reactstrap';
 
-export const Calculator = ({ product, material }) => {
+export const Calculator = (
+    {
+      product,
+      material,
+      setTotalSum,
+      totalSum,
+      setCount,
+      height,
+      width,
+      count,
+      setWidth,
+      setHeight,
+    }) => {
   const { locale_quantity, locale_unit, calculation_type, locale_calculation_unit, proportion } = product;
-  const [count, setCount] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [totalSum, setTotalSum] = useState(0);
+
 
   React.useEffect(() => {
     setCount((height * width) / 10000);

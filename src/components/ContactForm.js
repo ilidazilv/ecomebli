@@ -1,15 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Formik, Form as FormikForm, Field } from 'formik';
 import "../styles/form.scss";
 import {useOrders} from "../hooks/useOrders";
 
-export const ContactForm = ({setStatus, product_id, product, isHome}) => {
+export const ContactForm = ({
+                                setStatus,
+                                product_id,
+                                product,
+                                isHome,
+                                price,
+                                calc1Locale,
+                                calc2Locale,
+                                calc3Locale,
+                                calc1,
+                                calc2,
+                                calc3,
+                            }) => {
     const {saveOrder} = useOrders();
     const onSubmit = ({tel, fullName}) => {
         if(!isHome){
-            saveOrder({tel: tel, name: fullName, product_id: product_id, product: product}, setStatus);
+            saveOrder({
+                tel: tel,
+                name: fullName,
+                product_id: product_id,
+                product: product,
+                price: price,
+                calc1Locale: calc1Locale,
+                calc1: calc1,
+                calc2Locale: calc2Locale,
+                calc2: calc2,
+                calc3Locale: calc3Locale,
+                calc3: calc3,
+            }, setStatus);
+        } else {
+            saveOrder({ tel: tel, name: fullName }, setStatus);
         }
-        saveOrder({ tel: tel, name: fullName }, setStatus);
     }
     const initialValues = {tel: '', fullName: ''}
     return(
