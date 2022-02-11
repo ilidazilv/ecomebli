@@ -7,7 +7,7 @@
   font-family: FoglihtenNo06, sans-serif;
 }
 .mobile-break {
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     display: block;
     height: 0;
   }
@@ -16,25 +16,25 @@
   position: relative;
   display: inline-block;
   min-width: 1.5vw;
-  left: .5vw;
+  left: 0.5vw;
   top: -2vw;
   font-size: 4vw;
   font-weight: 300;
 }
 .about .container .cell-2 {
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 5;
     text-align: center;
     width: 44%;
     margin-bottom: 12.5rem;
   }
 }
-.space-between{
+.space-between {
   justify-content: space-between;
 }
-.cell-1{
+.cell-1 {
   width: 28%;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 4;
     text-align: center;
     width: 49%;
@@ -43,7 +43,7 @@
 }
 .cell-2 {
   width: 26%;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 5;
     text-align: center;
     width: 49%;
@@ -54,7 +54,7 @@
   width: 46%;
   margin-bottom: 1.5vw;
   text-align: right;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 1;
     text-align: left;
     width: 100%;
@@ -64,7 +64,7 @@
 .cell-4 {
   width: 57%;
   margin-bottom: 8vw;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 2;
     text-align: right;
     width: 100%;
@@ -76,7 +76,7 @@
   width: 32%;
   box-sizing: border-box;
   text-align: right;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 3;
     text-align: left;
     width: 100%;
@@ -86,7 +86,7 @@
 .cell-6 {
   width: 56%;
   text-align: right;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 6;
     text-align: center;
     width: 49%;
@@ -97,14 +97,14 @@
   width: 44%;
   box-sizing: border-box;
   text-align: right;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     order: 7;
     text-align: center;
     width: 49%;
     padding: 0;
   }
 }
-.basic-text-big{
+.basic-text-big {
   font-size: 5vw;
   color: #403e3a;
   font-family: "Mazzard L Bold", sans-serif;
@@ -115,17 +115,17 @@
   padding-bottom: 4vw;
   font-family: "Mazzard M Medium", sans-serif;
   color: #403e3a;
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     font-size: 3vw;
   }
 }
-.sub-text{
-  font-size: .25em;
-  @media screen and (max-width: 767px){
-    font-size: .5em;
+.sub-text {
+  font-size: 0.25em;
+  @media screen and (max-width: 767px) {
+    font-size: 0.5em;
   }
 }
-#about{
-  background: linear-gradient(180deg, #E5E5E5 0%, #e3e1da 34.92%);
-  padding: 0 5%;
+#about {
+  background: linear-gradient(180deg, #e5e5e5 0%, #e3e1da 34.92%);
+  padding: 0 5% 10%;
 }

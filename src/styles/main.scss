@@ -1,38 +1,40 @@
 @font-face {
   font-family: "Mazzard L Bold";
-  src: url("../assets/fonts/MazzardL-Bold.woff") format('woff'),
-  url("../assets/fonts/MazzardL-Bold.woff2") format('woff2');
+  src: url("../assets/fonts/MazzardL-Bold.woff") format("woff"),
+    url("../assets/fonts/MazzardL-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "FoglihtenNo06";
-  src: url("../assets/fonts/FoglihtenNo06_076.otf") format('opentype');
+  src: url("../assets/fonts/FoglihtenNo06_076.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Mazzard H ExtraLight Italic";
-  src: url("../assets/fonts/MazzardH-ExtraLightItalic.woff") format('woff'),
-  url("../assets/fonts/MazzardH-ExtraLightItalic.woff2") format('woff2');
+  src: url("../assets/fonts/MazzardH-ExtraLightItalic.woff") format("woff"),
+    url("../assets/fonts/MazzardH-ExtraLightItalic.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Mazzard L Regular";
-  src: url("../assets/fonts/MazzardL-Regular.woff") format('woff'),
-  url("../assets/fonts/MazzardL-Regular.woff2") format('woff2');
+  src: url("../assets/fonts/MazzardL-Regular.woff") format("woff"),
+    url("../assets/fonts/MazzardL-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Mazzard M Medium";
-  src: url("../assets/fonts/MazzardM-Medium.ttf") format('truetype');
+  src: url("../assets/fonts/MazzardM-Medium.ttf") format("truetype");
 }
-body{
-  background: #E3E1DA;
+body {
+  background: #e3e1da;
 }
-#rating-table.table-striped>tbody>tr:nth-child(odd)>td,
-#rating-table.table-striped>tbody>tr:nth-child(odd)>th {
-  background-color: #EEE8E3;
+
+#rating-table.table-striped > tbody > tr:nth-child(odd) > td,
+#rating-table.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #eee8e3;
 }
-.wrapper{
-  max-width: 103.75rem;
-}
+// .wrapper {
+//   max-width: 103.75rem;
+// }
+
 .firstPage-h1 {
   font-family: "Mazzard L Bold", sans-serif;
   font-size: 5vw;
@@ -45,22 +47,22 @@ body{
   padding: 20% 5px 5px 15px;
   margin-bottom: 2vh;
   line-height: 1.1;
-  &:first-child{
+  &:first-child {
     font-size: 4vw;
   }
 }
-.fontSize-2_7em{
+.fontSize-2_7em {
   font-size: 2.7vw;
 }
 .tree-wrapper {
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: #EEE8E3;
+  background-color: #eee8e3;
   background-image: url("../assets/images/tree-back.png");
   background-position: right;
 }
 .firstPage-h1 {
-  border-top: 2vh solid #F7F3F1;
+  border-top: 2vh solid #f7f3f1;
 }
 .w-90 {
   width: 90%;
@@ -77,15 +79,15 @@ body{
 .logo-wrapper {
   padding: 2% 5%;
 }
-.firstPage-popper-bottom{
-  background: #EEE8E3;
-  opacity: .5;
+.firstPage-popper-bottom {
+  background: #eee8e3;
+  opacity: 0.5;
   left: -6vw;
   top: 0;
 }
-.firstPage-popper-top{
-  background: #EEE8E3;
-  opacity: .5;
+.firstPage-popper-top {
+  background: #eee8e3;
+  opacity: 0.5;
   bottom: -85%;
 }
 .w-13 {
@@ -93,8 +95,8 @@ body{
 }
 #secondPage-list li {
   list-style: none;
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     display: inline-block;
     height: 2vw;
     width: 2vw;
@@ -103,15 +105,15 @@ body{
     background-size: cover;
   }
 }
-.MazzardLRegular{
+.MazzardLRegular {
   font-family: "Mazzard L Regular", sans-serif;
 }
-.secondPage-right-font{
+.secondPage-right-font {
   font-size: 4.3vw;
   line-height: 1.1;
 }
 .hr {
-  background: #EEE8E3;
+  background: #eee8e3;
   height: 2vw;
   width: 110%;
   margin-left: -5%;
@@ -122,72 +124,72 @@ body{
   max-height: 25px;
   max-width: 25px;
 }
-#rating-table{
+#rating-table {
   text-align: center;
 }
-td{
+td {
   font-size: 2.5vw;
   font-family: "Mazzard L Regular", sans-serif;
   vertical-align: middle;
 }
-th{
+th {
   font-size: 2.5vw;
   font-family: "Mazzard L Regular", sans-serif;
 }
-.prices-table-td-color-left{
-  background-color: #EEE8E3 !important;
+.prices-table-td-color-left {
+  background-color: #eee8e3 !important;
 }
-.prices-table-td-color-right{
-  background-color: #F7F3F1 !important;
+.prices-table-td-color-right {
+  background-color: #f7f3f1 !important;
 }
-.prices-table-context{
+.prices-table-context {
   font-size: 2vw;
   font-family: "Mazzard L Regular", sans-serif;
 }
-#prices-table td{
+#prices-table td {
   line-height: 1.1;
   padding: 1% 0 0 1%;
 }
-.list{
+.list {
   font-family: "Mazzard L Regular", sans-serif;
   font-size: 4vw;
 }
-.fourthPage-images-wrapper{
-  background-color: #EEE8E3;
+.fourthPage-images-wrapper {
+  background-color: #eee8e3;
   padding: 2vw;
   height: 70vw;
 }
-.fourthPage1{
+.fourthPage1 {
   width: 35vw;
   top: 2vw;
   left: 2vw;
   z-index: 3;
 }
-.fourthPage2{
+.fourthPage2 {
   width: 35vw;
   top: 15vw;
   left: 32vw;
   z-index: 2;
 }
-.fourthPage3{
+.fourthPage3 {
   width: 28vw;
   top: 3vw;
   left: 67vw;
   z-index: 2;
 }
-.fourthPage4{
+.fourthPage4 {
   width: 37vw;
   top: 35vw;
   left: 2vw;
   z-index: 1;
 }
-.fourthPage5{
+.fourthPage5 {
   width: 37vw;
   top: 43vw;
   left: 35vw;
   z-index: 0;
 }
-.fourthPage6{
+.fourthPage6 {
   width: 26vw;
   top: 25vw;
   left: 72vw;
@@ -198,17 +200,18 @@ th{
   max-width: 35px;
   margin-right: 1vw;
 }
-.fourthPage-footer{
+.fourthPage-footer {
   font-family: "Mazzard L Bold", sans-serif;
   font-size: 4vw;
   line-height: 1.1;
   padding: 2vw 0;
 }
-.footer-link{
+.footer-link {
   font-size: 4vw;
   color: black;
   text-decoration: none;
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: #535353;
     text-decoration: none;
   }
@@ -216,14 +219,14 @@ th{
 .fourthPage-footer p {
   margin: 0;
 }
-.fourthPage-footer-left{
+.fourthPage-footer-left {
   margin: 0;
   padding: 0 0 0 2vw;
 }
-.backgroundColor{
-  background: #E3E1DA;
+.backgroundColor {
+  background: #e3e1da;
 }
-.main-section-h1{
+.main-section-h1 {
   font-weight: 600;
   font-size: 9vw;
   line-height: 1.1;
@@ -231,33 +234,38 @@ th{
   text-transform: uppercase;
   color: #403e3a;
   z-index: 2;
-  background: radial-gradient(circle, #f8d2ae 0%, transparent 30%, transparent 100%);
+  background: radial-gradient(
+    circle,
+    #f8d2ae 0%,
+    transparent 30%,
+    transparent 100%
+  );
 }
-.main-section-text-wrapper{
+.main-section-text-wrapper {
   height: 52vw;
   padding: 1vw;
-  @media screen and (min-width: 980px){
+  @media screen and (min-width: 980px) {
     padding: 2vw;
   }
 }
-.main-section-img-1{
+.main-section-img-1 {
   width: 26vw;
-  top: 6vw;
+  top: 4.5vw;
   left: 5vw;
 }
-.main-section-img-2{
+.main-section-img-2 {
   width: 16vw;
   top: 12.3vw;
   right: 22.3vw;
 }
-.main-section-img-3{
-  width: 8vw;
-  top: 36.3vw;
-  right: 14.3vw;
+.main-section-img-3 {
+  width: 9vw;
+  top: 37vw;
+  right: 11vw;
   z-index: 2;
 }
-.mr-2{
-  margin-right: .5rem!important;
+.mr-2 {
+  margin-right: 0.5rem !important;
 }
 .main-categories {
   padding: 8vw 0 15vw 0;
@@ -272,84 +280,84 @@ th{
   text-transform: uppercase;
   color: #66635c;
 }
-.gallery-wrapper{
-  background-color: #E5E5E5;
+.gallery-wrapper {
+  background-color: #e5e5e5;
 }
-.gallery-img-wrapper{
+
+.gallery-img-wrapper {
   height: 200vw;
 }
-.gallery-item{
+.gallery-item {
   font-family: "Mazzard M Medium", sans-serif;
   font-size: 1.5vw;
 }
-.gallery-item span{
+.gallery-item span {
   margin-right: 1.5vw;
 }
-.gallery-item img{
-  margin-bottom: .5vw;
+.gallery-item img {
+  margin-bottom: 0.5vw;
 }
-.gallery-001{
-  top: -15vw;
+.gallery-001 {
+  top: -16vw;
   left: 10vw;
-  width: 25vw;
+  width: 24vw;
 }
-.gallery-002{
-  top: -15vw;
-  right: 10vw;
+.gallery-002 {
+  top: -16vw;
+  right: 7vw;
   width: 35vw;
 }
-.gallery-003{
+.gallery-003 {
   top: 30vw;
   left: 10vw;
   width: 30vw;
 }
-.gallery-004{
-  top: 50vw;
-  right: 10vw;
+.gallery-004 {
+  top: 55vw;
+  right: 7vw;
   width: 30vw;
 }
-.gallery-005{
+.gallery-005 {
   top: 85vw;
   left: 10vw;
-  width: 40vw;
+  width: 38vw;
 }
-.gallery-006{
-  top: 115vw;
-  right: 10vw;
+.gallery-006 {
+  top: 110vw;
+  right: 7vw;
   width: 25vw;
 }
-.gallery-007{
-  top: 150vw;
+.gallery-007 {
+  top: 153vw;
   left: 10vw;
-  width: 25vw;
+  width: 45vw;
 }
-.gallery-008{
-  top: 160vw;
-  right: 10vw;
-  width: 40vw;
-}
-.gallery-009{
-  width: 66.7vw;
+
+.gallery-009 {
+  width: 66vw;
   padding-left: 10vw;
 }
-.gallery-010{
+.gallery-010 {
   padding-right: 10vw;
 }
-.gallery-text{
+.gallery-text {
+  margin-top: -24vw;
+  margin-left: 53vw;
   font-family: "FoglihtenNo06", sans-serif;
   font-size: 3vw;
-  padding: 8vw 10vw;
+  padding: 0 10vw;
 }
-.gallery-text span{
-  padding-left: 10%;
+.gallery-text span {
+  padding-left: 20%;
 }
 .make-order-wrapper {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 4vw;
   padding-left: 10vw;
-  padding-right: 4vw;
+  padding-right: 8vw;
 }
 .make-order-text {
   position: relative;
@@ -357,7 +365,7 @@ th{
   max-width: 44.6875rem;
 }
 .make-order__title {
-  font-family: 'FoglihtenNo06', sans-serif;
+  font-family: "FoglihtenNo06", sans-serif;
   font-weight: 500;
   font-size: 4vw;
   line-height: 1.1;
@@ -365,9 +373,9 @@ th{
   color: #403e3a;
 }
 .make-order-social {
-  font-family: 'FoglihtenNo06', sans-serif;
+  font-family: "FoglihtenNo06", sans-serif;
   position: absolute;
-  bottom: 0;
+  bottom: -2vw;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -378,20 +386,13 @@ th{
   text-transform: uppercase;
   color: #66635c;
 }
-.arrowWrapper{
-  border-radius: 50%;
-  border: 1px solid #66635C;
-  height: 15vw;
-  width: 15vw;
-  bottom: -7vw;
-  left: -7vw;
-  background-color: #E5E5E5;
+
+.arrowWrapper img {
+  position: absolute;
+  margin-top: 4vw;
+  width: 10vw;
 }
-.arrowWrapper img{
-  margin: .3vw;
-  max-width: 2vw;
-}
-.alert-wrapper{
+.alert-wrapper {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -401,23 +402,23 @@ th{
   overflow-y: auto;
   outline: 0;
 }
-.pt-15vw{
+.pt-15vw {
   padding-top: 15vw;
   padding-bottom: 15vw;
 }
-.navbar-container{
+.navbar-container {
   list-style: none;
 }
-.pb-4vw{
+.pb-4vw {
   padding-bottom: 4vw;
 }
-.form-padding{
-  padding: 10vw 15vw !important;
-  @media screen and (max-width: 480px){
+.form-padding {
+  padding: 15vw 15vw !important;
+  @media screen and (max-width: 480px) {
     padding: 10vw 5vw !important;
   }
 }
-.not-found-wrapper{
+.not-found-wrapper {
   font-size: 1.5em;
   font-family: "Mazzard M Medium", sans-serif;
 }
